@@ -49,7 +49,7 @@ public class WebSecurityConfig {
                 .formLogin(form -> form
                         .loginProcessingUrl("/doLogin")
                         .loginPage("/login")
-                        .defaultSuccessUrl("/?login_success", true)
+                        .defaultSuccessUrl("/index", true)
                         .failureUrl("/login?error=true")
                         .permitAll()
                 )

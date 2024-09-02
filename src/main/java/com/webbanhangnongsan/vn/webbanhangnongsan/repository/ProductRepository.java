@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product,Long> {
-    @Query(value = "select * from products limit 8", nativeQuery = true)
-    List<ProductResponse> getTop8Products();
+    @Query(value = "SELECT * FROM products LIMIT 8", nativeQuery = true)
+    List<Product> getTop8Products();
 }

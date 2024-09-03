@@ -29,4 +29,11 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "categoryId")
     Category category;
+    String formattedPrice;
+    public String getFormattedPrice() {
+        return formattedPrice;
+    }
+    public void setFormattedPrice(String formattedPrice) {
+        this.formattedPrice = formattedPrice;
+    }
 }

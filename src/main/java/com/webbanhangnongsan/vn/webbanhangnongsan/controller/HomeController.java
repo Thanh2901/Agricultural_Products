@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Controller
@@ -25,6 +26,10 @@ public class HomeController {
     public void getData(Model model) {
         List<Product> productList = productRepository.getTop8Products();
         model.addAttribute("productList", productList);
+        DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+        for (Product product : productList) {
+            product.setFormattedPrice(decimalFormat.format(product.getPrice()));
+        }
     }
 
     public void checkLogin(Model model, User user) {

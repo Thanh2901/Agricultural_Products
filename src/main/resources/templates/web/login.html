@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,63 +10,117 @@
 
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #F9FFCB; /* Màu nền trang tổng thể */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
         }
-        .login-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+
+        .card {
             width: 100%;
+            max-width: 400px; /* Maximum width of the form */
+            border-radius: 12px; /* Slightly rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            overflow: hidden; /* Ensure no content overflows */
+            background-color: #FFFFFF; /* Màu nền card */
         }
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-        }
-        .form-control {
-            border-radius: 50px;
-        }
-        .btn-custom {
-            background-color: #007bff;
-            border: none;
-            border-radius: 50px;
-            padding: 10px;
-            width: 100%;
+
+        .card-header {
+            background: linear-gradient(to right, #FFF44C, #FF766D); /* Gradient header */
             color: white;
-            font-weight: bold;
+            text-align: center;
+            padding: 20px;
         }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-control {
+            border-radius: 8px; /* Rounded corners for input fields */
+            border: 1px solid #80DE71; /* Viền input fields */
+            padding: 10px;
+            background-color: #FFFFFF; /* Nền của input fields */
+        }
+
+        .btn-custom {
+            background-color: #FF766D; /* Màu nền cho nút chính */
+            border: none;
+            border-radius: 8px; /* Rounded corners for the button */
+            padding: 10px;
+            color: #FFFFFF; /* Màu chữ cho nút */
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
         .btn-custom:hover {
-            background-color: #0056b3;
+            background-color: #F9FFCB; /* Màu nền cho nút khi hover */
+        }
+
+        .forgot-password {
+            color: #FF766D; /* Màu chữ cho liên kết quên mật khẩu */
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .register-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            gap: 10px; /* Khoảng cách giữa chữ và nút */
+        }
+
+        .register-link p {
+            margin: 0;
+            color: #FF766D; /* Màu chữ cho phần "Don't have an account?" */
+        }
+
+        .register-link .btn {
+            background-color: #80DE71; /* Màu nền cho nút "Create new" */
+            color: #FFFFFF; /* Màu chữ cho nút "Create new" */
+            border: none; /* Bỏ viền cho nút */
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        .register-link .btn:hover {
+            background-color: #F9FFCB; /* Màu nền cho nút khi hover */
         }
     </style>
 </head>
 <body>
 
-<div class="login-container">
-    <h2>Login</h2>
-    <form th:action="@{/doLogin}" method="POST" class="user-form">
-        <div class="mb-3">
-            <label for="username" class="form-label">Tên đăng nhập</label>
-            <input
-                    type="email"
-                    class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="Nhập tên đăng nhập" required>
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Mật khẩu</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu" required>
-        </div>
-        <button type="submit" class="btn btn-custom">Đăng nhập</button>
-    </form>
+<div class="card">
+    <div class="card-header">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 100px;" alt="logo">
+        <h4 class="mt-2">Welcome to The Lotus Team</h4>
+    </div>
+    <div class="card-body">
+        <form th:action="@{/doLogin}" method="POST">
+            <p class="text-center">Please login to your account</p>
+            <div class="mb-3">
+                <input type="email" id="username" class="form-control" name="username" placeholder="Phone number or email address" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-custom">Log in</button>
+            </div>
+            <div class="text-center">
+                <a class="forgot-password" href="#!">Forgot password?</a>
+            </div>
+            <div class="register-link">
+                <p class="mb-0">Don't have an account?</p>
+                <a href="/register" class="btn">Create new</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 <!-- Bootstrap JS and Popper.js CDN -->

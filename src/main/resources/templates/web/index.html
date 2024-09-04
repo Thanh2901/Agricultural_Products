@@ -284,7 +284,7 @@
                 </div>
             </div>
             <div class="row featured__filter">
-                <div th:each="product:${productList}" th:class="'col-lg-3 col-md-4 col-sm-6 mix ' + ${product.category.categoryName}">
+                <div th:each="product:${getTop8Products}" th:class="'col-lg-3 col-md-4 col-sm-6 mix ' + ${product.category.categoryName}">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg"  th:attr="data-setbg=@{'img/product/' + ${product.productImage}}">
                             <ul class="featured__item__pic__hover">

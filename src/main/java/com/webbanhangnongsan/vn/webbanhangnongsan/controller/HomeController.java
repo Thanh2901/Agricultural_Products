@@ -24,10 +24,10 @@ public class HomeController {
     }
 
     public void getData(Model model) {
-        List<Product> productList = productRepository.getTop8Products();
-        model.addAttribute("productList", productList);
+        List<Product> getTop8Products = productRepository.getTop8Products();
+        model.addAttribute("getTop8Products", getTop8Products);
         DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
-        for (Product product : productList) {
+        for (Product product : getTop8Products) {
             product.setFormattedPrice(decimalFormat.format(product.getPrice()));
         }
     }

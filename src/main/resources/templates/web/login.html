@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background-color: #FFF9AA; /* Màu nền trang tổng thể */
+            background-color: #FAF3DD; /* Màu nền trang tổng thể - màu vàng kem pastel nhẹ nhàng */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,14 +24,19 @@
             border-radius: 12px; /* Slightly rounded corners */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             overflow: hidden; /* Ensure no content overflows */
-            background-color: #FFFFFF; /* Màu nền card */
+            background-color: #FFFFFF; /* Màu nền card - màu trắng để nổi bật và dễ nhìn */
         }
 
         .card-header {
-            background: linear-gradient(to right, #FF8663, #FFD588); /* Gradient header */
+            background: linear-gradient(to right, #90BA05, #76BFC8); /* Gradient header - phối màu xanh lá pastel và xanh dương pastel */
             color: white;
             text-align: center;
             padding: 20px;
+        }
+
+        .card-header img {
+            width: 100px; /* Kích thước của logo */
+            border-radius: 50%; /* Góc tròn cho ảnh logo */
         }
 
         .card-body {
@@ -40,13 +45,13 @@
 
         .form-control {
             border-radius: 8px; /* Rounded corners for input fields */
-            border: 1px solid #ACEC06; /* Viền input fields */
+            border: 1px solid #C8D6B9; /* Viền input fields - màu xanh lá pastel nhạt hơn */
             padding: 10px;
             background-color: #FFFFFF; /* Nền của input fields */
         }
 
         .btn-custom {
-            background-color: #FF8663; /* Màu nền cho nút chính */
+            background-color: #7CA488; /* Màu nền cho nút chính - màu xanh lá pastel đậm hơn */
             border: none;
             border-radius: 8px; /* Rounded corners for the button */
             padding: 10px;
@@ -56,11 +61,11 @@
         }
 
         .btn-custom:hover {
-            background-color: #FFD588; /* Màu nền cho nút khi hover */
+            background-color: #6A8A6A; /* Màu nền cho nút khi hover - màu xanh lá pastel đậm hơn một chút */
         }
 
         .forgot-password {
-            color: #FF8663; /* Màu chữ cho liên kết quên mật khẩu */
+            color: #76BFC8; /* Màu chữ cho liên kết quên mật khẩu - màu xanh dương pastel */
             text-decoration: none;
         }
 
@@ -78,18 +83,18 @@
 
         .register-link p {
             margin: 0;
-            color: #FF8663; /* Màu chữ cho phần "Don't have an account?" */
+            color: #7CA488; /* Màu chữ cho phần "Don't have an account?" - màu xanh lá pastel đậm hơn */
         }
 
         .register-link .btn {
-            background-color: #ACEC06; /* Màu nền cho nút "Create new" */
+            background-color: #ACEC06; /* Màu nền cho nút "Create new" - màu xanh lá pastel sáng hơn */
             color: #FFFFFF; /* Màu chữ cho nút "Create new" */
             border: none; /* Bỏ viền cho nút */
             border-radius: 8px; /* Rounded corners */
         }
 
         .register-link .btn:hover {
-            background-color: #FFD588; /* Màu nền cho nút khi hover */
+            background-color: #8FC1A9; /* Màu nền cho nút khi hover - màu xanh lá pastel hơi ngả xanh biển */
         }
     </style>
 </head>
@@ -97,8 +102,8 @@
 
 <div class="card">
     <div class="card-header">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" style="width: 100px;" alt="logo">
-        <h4 class="mt-2">Welcome to The Lotus Team</h4>
+        <img src="img/login_register/photo_2024-09-04_09-08-46.jpg" alt="logo">
+        <h4 class="mt-2">Welcome to The Organi</h4>
     </div>
     <div class="card-body">
         <form th:action="@{/doLogin}" method="POST">
